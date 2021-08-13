@@ -53,6 +53,17 @@ FHIR 사용방법
   
   __coordinat__ : 코드 시스템(uri), 코드, display 3가지 기재
 
+>[__리소스 레이어__](http://hl7.org/fhir/overview-arch.html#organizing)
+
+<img src = "../img/ResourceLayer.png">
+
+1. __Foundation Resources__ : 기반 리소스. 인프라 업무에 사용. 다른 리소스로 부터 참조가 적음
+2. __Base Resources__ : 기본 자원(병원, 환자). 부모 노드. 참조 되는 경우는 많으나 참조하는 경우는 적음
+3. __Clinical Resources__ : 임상 관력 리소스(관찰,치료,제공약물). 2번 레이어 참조
+4. __Financial Resources__ : 재정 관련 리소스(청구). 2,3번 레이더 참조(환자,임상->청구)
+5. __Specialized Resources__ : 전문적 리소스. 덜 일반적인 사례 전용 리소스.
+6. __Resource Contextualization__ : 프로파일 목적 리소스. 리소스의 확장, 제한, 컨텍스트화에 사용. 리소스에 포함되지 않으나, 5계층 확장함. 
+
 
 
 >__리소스 구조 예시__
