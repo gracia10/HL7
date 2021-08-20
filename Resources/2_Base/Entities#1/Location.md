@@ -42,6 +42,16 @@
   "endpoint" : [{ Reference(Endpoint) }]
 }
 ```
-- mode는 특정한 장소(instance) or 범위의 장소('kind') 로 나뉜다.
-  - 
-  - mode = "kind" 인 경우 adress가 없을 수 있다  
+- mode는 특정한 장소(instance) or 범위의 장소(kind) 로 나뉜다.
+  - A 구급차, 201호 실 vs 구급차, 병실
+  - 특정 장소를 참조해야 할 때 "kind" 모드의 리소스를 사용해서는 안된다 
+  - kind 모드인 경우 adress가 없을 수 있다  
+  - instance 모드인 경우에만 사용하는 element가 있다 (예외 존재. O병원 구급차)
+```
+Location.identifier
+Location.telecom
+Location.address
+Location.position
+Location.status
+Location.managingOrganization
+```
