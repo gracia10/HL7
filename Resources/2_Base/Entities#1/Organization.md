@@ -12,7 +12,7 @@
   "name" : "<string>",
   "alias" : ["<string>"], ------------------ 조직의 이전이름, 대체이름
   "telecom" : [{ ContactPoint }], ---------- 조직의 공공 조직 연락 창구
-  "address" : [{ Address }], 
+  "address" : [{ Address }], --------------- 조직의 물리적 주소 
   "partOf" : { Reference(Organization) }, -- 현재 조직의 상위 조직
   "contact" : [{ --------------------------- 특정 목적을 위한 조직의 연락처 (Admin..)
     "purpose" : { CodeableConcept }, ------- 당사자에게 연락하는 목적

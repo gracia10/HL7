@@ -1,13 +1,13 @@
 # [Location 3](http://hl7.org/fhir/location.html)
 
 
-- 서비스가 제공 되는 물리적 장소
+- 서비스를 제공하거나 리소스/참가자가 저장/발견 되는 물리적 공간 정보
   - 건물, 병동, 방, 침대
   - Mobile Clinic (진료차) , 내동고, 인큐베이터
   - 집, 차고, 도로, 주차장, 공원
  
 
-- Organize 의 물리적 구조를 설명하기 위한 리소스
+- Organization 의 물리적 구조를 설명하기 위한 리소스
 - 관할 영역/구역을 설명하는 리소스 
   - 국가, 도, 사업, 사업 범위, 사업 부문
 
@@ -23,7 +23,7 @@
   "mode" : "<code>", --------------------- (instance | kind) 해당 리소스가 특정 장소, 관할 의미 여부
   "type" : [{ CodeableConcept }], -------- 장소에서 수행하는 작업 코드
   "telecom" : [{ ContactPoint }], 
-  "address" : { Address }, 
+  "address" : { Address }, --------------- 물리적 주소
   "physicalType" : { CodeableConcept }, -- 물리적 유형 (집, 도로, 자동차)
   "position" : {  ------------------------ WGS84 데이텀을 사용해 표시되는 물리적 위치
     "longitude" : <decimal>, ------------- 경도
@@ -55,3 +55,16 @@ Location.position
 Location.status
 Location.managingOrganization
 ```
+---
+__Location vs Organization__
+
+- Location 
+  - 조직의 운영시설/계층 의 물리적 구조를 설명하기 위한 리소스
+  - 서비스가 제공되거나, encounter-observation 이 연결되는 장소
+  - address 가 없어도 리소스가 유효한 케이스
+    1) 원격 장소지만, 기기를 통해 위치 정보가 있는 경우
+    2) mode='kind' 인 경우 
+  - 관할 구역, 영역의 물리적 범위
+- Organization 
+  - 조직의 개념적 계층 구조를 설명하기 위한 리소스
+
